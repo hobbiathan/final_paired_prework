@@ -40,8 +40,14 @@ RSpec.describe DriveIn do
   it 'can find #vehicles_with_passengers' do
     @drive_in.park_vehicle(@vehicle)
     @drive_in.park_vehicle(@vehicle_two)
-    
+
     expect(@drive_in.vehicles_with_passengers).to eq([@vehicle_two])
   end
 
+  it 'can list all #underage_passengers' do
+    @drive_in.park_vehicle(@vehicle)
+    @drive_in.park_vehicle(@vehicle_two)
+
+    expect(@drive_in.underage_passengers).to eq([@taylor])
+  end
 end
