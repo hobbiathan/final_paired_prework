@@ -26,6 +26,10 @@ RSpec.describe DriveIn do
     expect(@drive_in).to be_instance_of(DriveIn)
   end
 
+  it 'has a name' do
+    expect(@drive_in.name).to eq("Sundance")
+  end
+
   it 'initializes empty vehicles_parked array' do
     expect(@drive_in.vehicles_parked).to eq([])
   end
