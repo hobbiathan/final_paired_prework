@@ -13,8 +13,10 @@ RSpec.describe DriveIn do
     @charlie = Passenger.new({"name" => "Charlie", "age" => 18})
     @jude = Passenger.new({"name" => "Jude", "age" => 20})
     @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+    @joey = Passenger.new({"name" => "Joey", "age" => 17})
 
     @vehicle.add_passenger(@charlie)
+    @vehicle.add_passenger(@joey)
 
     @vehicle_two.add_passenger(@jude)
     @vehicle_two.add_passenger(@taylor)
@@ -41,13 +43,13 @@ RSpec.describe DriveIn do
     @drive_in.park_vehicle(@vehicle)
     @drive_in.park_vehicle(@vehicle_two)
 
-    expect(@drive_in.vehicles_with_passengers).to eq([@vehicle_two])
+    expect(@drive_in.vehicles_with_passengers).to eq([@vehicle, @vehicle_two])
   end
 
   it 'can list all #underage_passengers' do
     @drive_in.park_vehicle(@vehicle)
     @drive_in.park_vehicle(@vehicle_two)
 
-    expect(@drive_in.underage_passengers).to eq([@taylor])
+    expect(@drive_in.underage_passengers).to eq([@joey, @taylor])
   end
 end
