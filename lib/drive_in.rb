@@ -10,23 +10,24 @@ class DriveIn
   def park_vehicle(vehicle_obj)
     @vehicles_parked << vehicle_obj
   end
-  # ?????????
+
+
   def vehicles_with_passengers
+
     total = vehicles_parked.select do |vehicle|
-      # require 'pry'; binding.pry
       vehicle.passengers.size > 1
     end
+
   end
 
   def underage_passengers
-    total = @vehicles_parked.map do |vehicle|
 
+    total = @vehicles_parked.map do |vehicle|
       vehicle.passengers.select do |passenger|
         passenger.age < 18
       end
-    end
-
-    total.flatten
+    end.flatten
+    
   end
 
 
