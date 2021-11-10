@@ -14,7 +14,7 @@ class DriveIn
 
   def vehicles_with_passengers
 
-    total = vehicles_parked.select do |vehicle|
+    vehicles_parked.select do |vehicle|
       vehicle.passengers.size > 1
     end
 
@@ -22,12 +22,12 @@ class DriveIn
 
   def underage_passengers
 
-    total = @vehicles_parked.map do |vehicle|
+    @vehicles_parked.map do |vehicle|
       vehicle.passengers.select do |passenger|
         passenger.age < 18
       end
     end.flatten
-    
+
   end
 
 
