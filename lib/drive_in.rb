@@ -24,7 +24,7 @@ class DriveIn
 
     @vehicles_parked.map do |vehicle|
       vehicle.passengers.select do |passenger|
-        passenger.adult? == false
+        !passenger.adult? # fancy fancy 
       end
     end.flatten
 
