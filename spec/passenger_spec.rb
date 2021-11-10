@@ -17,8 +17,8 @@ RSpec.describe Passenger do
     expect(@passenger.age).to eq(18)
   end
 
-  it 'has a default #driver? state of false' do
-    expect(@passenger.driver?).to be false
+  it 'has a default driver state of false' do
+    expect(@passenger.driver).to be false
   end
 
   it 'can change passenger to a driver using #drive' do
