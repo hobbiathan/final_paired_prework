@@ -24,7 +24,7 @@ class DriveIn
 
     @vehicles_parked.map do |vehicle|
       vehicle.passengers.select do |passenger|
-        passenger.age < 18
+        passenger.adult? == false
       end
     end.flatten
 
