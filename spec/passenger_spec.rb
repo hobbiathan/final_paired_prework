@@ -1,3 +1,5 @@
+require './lib/passenger'
+
 RSpec.describe Passenger do
   before(:each) do
     @passenger = Passenger.new({"name" => "Charlie", "age" => 18})
